@@ -1,0 +1,1201 @@
+/* Body Classes for Each Page */
+
+.collection-welcome {}
+.collection-organicsapples {}
+.collection-organicspears {}
+.collection-organicsstone-fruit {}
+.collection-organicskiwifruit {}
+.collection-organicsonions {}
+.collection-sustainability {}
+.collection-retailers {}
+.collection-growers {}
+.collection-organic-faqs {}
+
+.collection-organicsapples main,
+.collection-organicspears main,
+.collection-organicsstone-fruit main,
+.collection-organicskiwifruit main,
+.collection-organicsonions main {
+  visibility: hidden;
+
+}
+
+
+/* Header (positioning) */
+
+
+/*#header{
+  background: rgba(151,156,149,.95);
+  position: absolute;
+}*/
+
+
+/* Base Styles */
+
+h1 {
+  font-size: 30pt !important;
+  font-family: "Knockout 31 A", "Knockout 31 B" !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  letter-spacing: -.015em !important;
+  color: #90cd44 !important
+}
+h2 {
+  font-size: 16pt;
+  font-family: "Ideal Sans A", "Ideal Sans B";
+  font-style: normal;
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #5e5f5d
+}
+h3 {
+  font-size: 17pt;
+  font-family: "Knockout 30 A", "Knockout 30 B";
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #5e5f5d;
+}
+p {
+  font-size: 12pt;
+  font-family: "Ideal Sans A", "Ideal Sans B";
+  font-style: normal;
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #5e5f5d;
+}
+#page a {
+  color: inherit !important;
+  text-decoration: underline;
+}
+.spacer-block.vsize-1 {
+  height: 3px;
+}
+
+/* Base Styles : Buttons */
+
+#page .button, #page a.sqs-block-button-element--small, #page a.sqs-block-button-element {
+  text-decoration: none !important;
+  color: #5e5f5d !important;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-size: 12px;
+  text-align: left;
+}
+@media only screen and (max-width: 480px) {
+  .sqs-block-button-container--left {
+    text-align: center !important;
+  }
+}
+
+/*
+padding: 13px 26px;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 600;
+letter-spacing: 1px;
+font-family: "Montserrat";
+font-size: 12px;
+text-transform: uppercase;
+letter-spacing: 2px;
+font-weight: 700;
+font-style: normal;
+color: #4f4f4a;
+background-color: #aae863;
+border-color: #aae863
+*/
+
+#header #logoWrapper, #header #siteTitleWrapper {
+  position: relative;
+  left: 17px;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+  text-align: right !important
+}
+#header #mainNavWrapper .index {
+  margin: 0 0 0 25pt !important;
+  text-align: right !important
+}
+#mainNavigation div.collection, #mainNavigation .folder {
+  margin: 0 0 0 25pt !important
+}
+#header #mainNavWrapper {
+  text-align: right !important;
+  right: 17px
+}
+#logoImage img {
+  min-width: 180px !important;
+  width: 23vw;
+  max-width: 250px !important;
+  margin-bottom: -5px;
+}
+#logoImage a {
+    text-align: left;
+}
+
+/* Navigation (styles) */
+
+#mainNavWrapper nav a, #overlayNav nav a, #mainNavWrapper nav a:visited, #overlayNav nav a:visited, #mainNavWrapper nav label, #overlayNav nav label {
+  padding-bottom: 3px;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 9.5pt;
+  border-bottom: 3px solid #979c95;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 500;
+}
+#mainNavWrapper #mainNavigation> .active> a, #mainNavWrapper #mainNavigation> .active> label {
+  border-bottom: 3px solid #858982;
+}
+#mainNavigation .folder .subnav {
+  padding: 6pt 0;
+  margin-top: -3px !important;
+  border-top: 3px solid #858982;
+  background: #fff
+}
+#mainNavigation .folder .subnav .collection {
+  margin: 0 12.5pt !important
+}
+#mainNavigation .folder .subnav .collection a {
+  font-size: 9pt;
+  border: none;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  color: #848782;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 12pt;
+}
+
+/* Navigation Fine Tuning */
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  #header #mainNavWrapper .index, #mainNavigation div.collection, #mainNavigation .folder {
+      margin: 0 0 0 2.25vw !important;
+  }
+}
+
+/* Footer */
+
+#preFooter {
+  display: none;
+}
+#footer {
+  background-color: #f2f2f1;
+}
+#footer h3 {
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 9pt;
+  color: #545453;
+  line-height: 1.4 !important;
+}
+#footer ul {
+  list-style: none;
+  padding: 0;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 9pt;
+  color: #545453;
+}
+#footer h2 {
+  font-family: "Whitney SSm A", "Whitney SSm B";
+  font-style: normal;
+  font-weight: 300;
+  color: #90cd44;
+  font-size: 20pt;
+}
+#footer ul > li > p {
+  line-height: 1.6 !important;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+}
+#footer ul > li > p::before {
+  content: none;
+}
+#footer ul > li > p a {
+  border: none !important;
+}
+
+/* Footer : Column Widths */
+
+@media only screen and (min-width: 767px) {
+  #footerBlocks {
+    text-align: left;
+  }
+  #footerBlocks .sqs-col-12 {
+    display: table;
+  }
+  #footerBlocks .sqs-col-12 .sqs-row {
+    display: table;
+    width: auto;
+    margin: 0 auto;
+  }
+  #footerBlocks .sqs-col-12 .row .col {
+    display: table-column;
+    text-align: left;
+    width: auto;
+  }
+  #footerBlocks .sqs-col-12 .row .col:nth-of-type(1) {
+    margin-right: 60px;
+  }
+  #footerBlocks .sqs-col-12 .row .col:nth-of-type(2) {
+    margin-right: 70px;
+  }
+}
+
+/* Footer : Legal */
+
+#footer .sqs-block-content p {
+  font-size: 9pt;
+}
+
+/* Welcome */
+
+/* Welcome : Overlay (content over slideshow) */
+
+#welcome-overlay-section,
+#welcome-overlay-new-section {
+  position: absolute;
+  text-align: center;
+  width: 80%;
+  margin-left: -40%;
+  left: 50%;
+  top: 0;
+  z-index: 1000;
+  visibility: hidden;
+}
+#welcome-overlay-section h1,
+#welcome-overlay-new-section h1 {
+  margin: 0;
+  position: absolute;
+  top: 10.1vw;
+  left: 50%;
+  width: 80vw;
+  margin-left: -40vw;
+  color: #fff;
+  background: url(http://static1.squarespace.com/static/57115f0940261dc8badcd6a8/t/5725561ec2ea51b309f42847/1462064670790/Banner.png) center center no-repeat;
+  background-size: contain;
+  text-indent: -9000px;
+  overflow: hidden;
+  height: 14vw;
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, .25);
+}
+#welcome-overlay-section h2,
+#welcome-overlay-new-section h2 {
+  margin: 0;
+  position: absolute;
+  top: 22.1vw;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Gotham A", "Gotham B";
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: .02em;
+  font-size: 6.7vw !important;
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, .25);
+}
+#welcome-overlay-section h2 span,
+#welcome-overlay-new-section h2 span {
+  color: #fff;
+  font-size: 2vw;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 700;
+  position: absolute;
+  margin-top: -1.6vw;
+  margin-left: .4vw;
+}
+
+/* Welcome : Overlay : Fine-tuning */
+
+@media only screen and (max-width: 1920px) {
+  #welcome-overlay-section h1,
+  #welcome-overlay-new-section h1 {
+    margin-top: -1vw;
+  }
+  #welcome-overlay-section h2,
+  #welcome-overlay-new-section h2 {
+    margin-top: -1vw;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #welcome-overlay-section h1,
+  #welcome-overlay-new-section h1 {
+    margin-top: -2vw;
+  }
+  #welcome-overlay-section h2,
+  #welcome-overlay-new-section h2 {
+    margin-top: -2vw;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #welcome-overlay-section h1,
+  #welcome-overlay-new-section h1 {
+    margin-top: -3vw;
+  }
+  #welcome-overlay-section h2,
+  #welcome-overlay-new-section h2 {
+    margin-top: -3vw;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #welcome-overlay-section h1,
+  #welcome-overlay-new-section h1 {
+    margin-top: -4vw;
+  }
+  #welcome-overlay-section h2,
+  #welcome-overlay-new-section h2 {
+    margin-top: -4vw;
+  }
+}
+@media only screen and (max-width: 320px) {
+  #welcome-overlay-section h1,
+  #welcome-overlay-new-section h1 {
+    margin-top: -7vw;
+  }
+  #welcome-overlay-section h2,
+  #welcome-overlay-new-section h2 {
+    margin-top: -7vw;
+  }
+}
+
+/* Welcome : Home (slideshow) */
+
+#welcome-home-section .arrow,
+#welcome-home-new-section .arrow {
+  display: none;
+}
+
+#welcome-home-section span.circle,
+#welcome-home-new-section span.circle {
+  background-color: rgba(255, 255, 255, .5);
+  border: 0;
+  width: 8pt;
+  height: 8pt;
+  margin: 0 6pt
+}
+#welcome-home-section span.circle.sqs-active-slide,
+#welcome-home-new-section span.circle-sqs-active-slide {
+  background-color: #fff
+}
+
+/* Welcome : Intro (first text section) */
+
+#welcome-intro-page.content:not(.gallery-content),
+#welcome-intro-new-page.content:not(.gallery-content) {
+  padding: 38px 34px;
+}
+#welcome-intro-page h1,
+#welcome-intro-new-page h1 {
+  font-size: 30pt;
+  font-family: "Knockout 31 A", "Knockout 31 B";
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: -.015em;
+  color: #90cd44
+}
+#welcome-intro-page h2,
+#welcome-intro-new-page h2 {
+  font-size: 16pt;
+  font-family: "Ideal Sans A", "Ideal Sans B";
+  font-style: normal;
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #5e5f5d
+}
+#welcome-intro-page h3,
+#welcome-intro-new-page h3 {
+  font-size: 17pt;
+  font-family: "Knockout 30 A", "Knockout 30 B";
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #5e5f5d;
+  padding-left: 70pt;
+  background: url(http://static1.squarespace.com/static/57115f0940261dc8badcd6a8/t/578feadc37c58134d46c985f/1469049565070/OrganicVolume.jpg) no-repeat;
+  background-size: 55pt;
+  display: table-cell;
+  height: 60pt;
+  vertical-align: middle;
+}
+#welcome-intro-page .col:nth-of-type(2) h3,
+#welcome-intro-new-page .col:nth-of-type(2) h3 {
+  background-image: url(http://static1.squarespace.com/static/57115f0940261dc8badcd6a8/t/578feb4b579fb38f16b381a3/1469049676184/TwoDecades.jpg);
+}
+
+/* Second Icon
+(http://static1.squarespace.com/static/57115f0940261dc8badcd6a8/t/578feb4b579fb38f16b381a3/1469049676184/TwoDecades.jpg)
+*/
+
+#welcome-intro-page p,
+#welcome-intro-new-page p {
+  font-size: 12pt;
+  font-family: "Ideal Sans A", "Ideal Sans B";
+  font-style: normal;
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #5e5f5d
+}
+
+/* Welcome : Worldwide */
+
+#welcome-worldwide-page,
+#welcome-worldwide-new-page {
+  padding-top: 65pt;
+  padding-bottom: 135pt;
+}
+#welcome-worldwide-page h1,
+#welcome-worldwide-new-page h1 {
+  color: #fff !important;
+  font-size: 30pt !important;
+  font-family: "Knockout 31 A", "Knockout 31 B"!important;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: .015em !important;
+  line-height: 32.5pt;
+}
+#welcome-worldwide-page h2,
+#welcome-worldwide-new-page h2 {
+  color: #fff;
+  font-size: 16pt;
+  line-height: 18pt;
+  font-family: "Whitney SSm A", "Whitney SSm B";
+  font-style: normal;
+  font-weight: 300;
+  text-transform: none;
+  margin: 0;
+}
+#welcome-worldwide-page h3,
+#welcome-worldwide-new-page h3 {
+  color: #fff;
+  font-size: 16pt;
+  line-height: 18pt;
+  font-family: "Whitney SSm A", "Whitney SSm B";
+  font-style: normal;
+  font-weight: 300;
+  text-transform: none;
+  margin: 0;
+}
+
+/* Welcome : Product */
+
+#welcome-product-section,
+#welcome-product-new-section {
+  background: #adb4ab;
+}
+#welcome-product-section .sqs-gallery .slide .image-slide-title,
+#welcome-product-new-section .sqs-gallery .slide .image-slide-title {
+  font-size: 18pt;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Knockout 31 A", "Knockout 31 B";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17.5pt !important;
+  letter-spacing: .04em;
+  padding-bottom: 3pt !important;
+  margin-top: -9pt;
+}
+#welcome-product-section .sqs-gallery .slide .image-slide-title a {
+  color: white !important;
+  /*
+  border-bottom: 1px solid rgba(255, 255, 255, .75);
+  */
+  text-decoration: none;
+}
+/* document.querySelectorAll('#welcome-product-new-section .image-slide-title').forEach(function(node){ node.parentElement.querySelector('a').appendChild(node); }) */
+#welcome-product-section .sqs-gallery .slide .image-slide-title,
+#welcome-product-new-section .sqs-gallery .slide .image-slide-title {
+  color: white !important;
+  text-decoration: none;
+}
+#welcome-product-page,
+#welcome-product-new-page {
+  padding-top: 36pt;
+  padding-bottom: 36pt
+}
+#welcome-product-page .sqs-block,
+#welcome-product-new-page .sqs-block {
+  padding-right: 0;
+  padding-left: 0
+}
+
+/* Welcome : Sustainability */
+
+#welcome-sustainability-section {
+  background: white;
+}
+#welcome-sustainability-section h1 {
+  font-family: "Gotham A", "Gotham B"!important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+  color: #fff !important;
+  font-size: 38pt !important;
+  letter-spacing: .015em !important;
+  text-shadow: 0px 0px 14px rgba(0, 0, 0, .75);
+}
+#welcome-sustainability-section h2 {
+  font-family: "Whitney SSm A", "Whitney SSm B";
+  font-style: italic;
+  font-weight: 500;
+  color: #fff;
+  font-size: 24pt;
+  margin-top: 24pt;
+  text-shadow: 0px 0px 14px rgba(0, 0, 0, .75);
+}
+#welcome-sustainability-section h2 a {
+  border-bottom: 1px solid rgba(255, 255, 255, .7);
+  text-decoration: none;
+}
+#welcome-sustainability-new-page {
+  padding-top: 65pt;
+  padding-bottom: 135pt;
+}
+#welcome-sustainability-new-page h1 {
+  color: #fff !important;
+  font-size: 30pt !important;
+  font-family: "Knockout 31 A", "Knockout 31 B"!important;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: .015em !important;
+  line-height: 32.5pt;
+}
+#welcome-sustainability-new-page h2 {
+  color: #fff;
+  font-size: 16pt;
+  line-height: 18pt;
+  font-family: "Whitney SSm A", "Whitney SSm B";
+  font-style: normal;
+  font-weight: 300;
+  text-transform: none;
+  margin: 0;
+}
+#welcome-sustainability-new-page h3 {
+  color: #fff;
+  font-size: 16pt;
+  line-height: 18pt;
+  font-family: "Whitney SSm A", "Whitney SSm B";
+  font-style: normal;
+  font-weight: 300;
+  text-transform: none;
+  margin: 0;
+}
+
+/* Organics (product pages) */
+
+.vt-organics #siteWrapper {
+  background: #f2f2f1 url(http://static1.squarespace.com/static/57115f0940261dc8badcd6a8/t/575f0a0f7c65e41902d6c198/1465846287448/b.gif) left top repeat-x;
+  background-position-y: 0;
+}
+.vt-organics #page h1 {
+  font-size: 32pt;
+  color: #8dc841;
+  text-transform: none;
+  font-family: "Knockout 30 A", "Knockout 30 B";
+  font-style: normal;
+  font-weight: 400;
+}
+.vt-organics #page .sqs-row:first-child .sqs-block-image {
+  width: 90.02%;
+}
+.vt-organics #page .sqs-row .sqs-row:first-child .image-block-outer-wrapper .image-block-wrapper {
+  border-radius: 100%;
+}
+.vt-organics #page h2 {
+  font-family: "Whitney SSm A", "Whitney SSm B";
+  font-style: normal;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 20pt;
+  color: #545453;
+  background: #a8e45e;
+  padding: 12pt;
+  width: 60pt;
+  line-height: 120%;
+  float: left;
+  margin-top: 12pt;
+}
+.vt-organics #page h3 {
+  font-family: "Whitney SSm A", "Whitney SSm B";
+  font-style: normal;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 10pt;
+  color: #545453;
+  margin-left: 20pt;
+  float: left;
+  margin-top: 12pt;
+}
+.vt-organics #page h3 strong {
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 800;
+}
+.vt-organics #page p {
+  color: #545453;
+  font-family: "Whitney SSm A", "Whitney SSm B";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13pt;
+}
+
+/* Organics : Fruit Grid */
+
+.vt-organics .sqs-gallery .slide a.content-fill {
+  border-radius: 100%;
+}
+.vt-organics .sqs-gallery .slide .image-slide-title {
+  font-family: "Whitney SSm A", "Whitney SSm B";
+  font-style: italic;
+  font-weight: 300;
+  font-size: 10pt !important;
+  color: #545453;
+  letter-spacing: normal;
+}
+.vt-organics .sqs-block-gallery.sqs-block.gallery-block {
+  margin-top: 20pt;
+}
+.vt-organics .image-block-outer-wrapper .image-caption-wrapper {
+  padding-top: 0 !important;
+}
+.vt-organics .image-block-outer-wrapper .image-caption-wrapper p {
+  margin: 0;
+}
+.vt-organics .image-caption p {
+  text-align: center;
+  font-family: "Knockout 30 A", "Knockout 30 B";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15pt;
+  letter-spacing: normal;
+}
+
+/* Organics: Tables */
+
+.vt-organics h4, .table_specs h4 {
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 9pt;
+  background: #5d5f5d;
+  color: white;
+  padding: 4pt 8pt;
+  margin-bottom: 3pt;
+}
+.vt-organics #table_upc h4 {
+  color: #5d5f5d;
+  background: white;
+  margin-top: 12pt;
+}
+.vt-organics table, .table_specs table {
+  font-size: 8pt;
+  color: #545453;
+  font-family: "Whitney SSm A", "Whitney SSm B";
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 0;
+  line-height: 9pt;
+  width: 100%;
+  letter-spacing: normal;
+}
+.vt-organics table tbody tr, .table_specs table tbody tr {
+  border-top: 2px solid #f2f2f1;
+}
+.vt-organics #table_upc table tbody tr {
+  border-top: 2px solid white;
+}
+.vt-organics table tr th, .table_specs table tr th {
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 800;
+}
+.vt-organics table tr td, .vt-organics table tr th, .table_specs table tr td, .table_specs table tr th {
+  padding: 5pt;
+  text-align: left;
+  color: #5d5f5d;
+  background: white;
+}
+.vt-organics #table_upc table tr td, .vt-organics #table_upc table tr th {
+  color: #5d5f5d;
+  background: #f2f2f1;
+}
+.vt-organics #table_specs {
+  padding-top: 42pt;
+  margin-bottom: 20pt;
+}
+
+/* Spec table footer */
+
+.vt-organics table tfoot tr, .table_specs table tfoot tr {
+  border-top: 2px solid #f2f2f1;
+}
+.vt-organics table tfoot tr td, .table_specs table tfoot tr td {
+  padding-top: 10pt;
+  font-style: italic;
+}
+
+/* Sustainability */
+
+#page .sqs-gallery-controls a {
+  width: 28pt;
+  background-color: rgba(0, 0, 0, 0);
+}
+.sqs-gallery-controls a::before {
+  color: white;
+  font-size: 30pt !important;
+  text-shadow: 0px 0px 10px black;
+}
+
+/* Sustainability : Heading */
+
+.collection-sustainability #greener-cold-storage {
+  font-size: 17pt;
+  font-family: "Knockout 30 A", "Knockout 30 B";
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #5e5f5d;
+  padding-left: 21%;
+  background: url(http://static1.squarespace.com/static/57115f0940261dc8badcd6a8/t/57b38913d482e95de31a44f7/1471383827993/greenercold-thermometer.jpg) no-repeat;
+  background-size: 20%;
+  display: table-cell;
+  height: 130pt;
+  vertical-align: middle;
+}
+.collection-sustainability #greener-cold-storage br {
+  display: none;
+}
+@media only screen and (max-width: 480px) {
+  .collection-sustainability #greener-cold-storage {
+    background: none;
+    padding-left: 0;
+  }
+  .collection-sustainability #greener-cold-storage h3 {
+    font-size: 17pt;
+    font-family: "Knockout 30 A", "Knockout 30 B";
+    font-style: normal;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    color: #5e5f5d;
+    padding-left: 77pt;
+    background: url(http://static1.squarespace.com/static/57115f0940261dc8badcd6a8/t/57b38913d482e95de31a44f7/1471383827993/greenercold-thermometer.jpg) no-repeat;
+    background-size: 71pt;
+    display: table-cell;
+    height: 80pt;
+    vertical-align: middle;
+    width: 100pt;
+  }
+  .collection-sustainability #greener-cold-storage br {
+    display: block;
+  }
+}
+
+/* Contact */
+
+
+/* Contact : Forms */
+
+.form-wrapper .field-list {
+  font-family: 'Whitney SSm A', 'Whitney SSm B';
+  font-size: 11pt;
+  color: rgb(93, 95, 93);
+}
+.form-wrapper .field-list .field .caption {
+  font-family: 'Whitney SSm A', 'Whitney SSm B';
+  font-size: 8pt;
+  color: rgb(93, 95, 93);
+}
+.form-wrapper .field-list .field .field-element {
+  font-family: 'Whitney SSm A', 'Whitney SSm B';
+}
+
+/* Banner Overlays */
+
+
+/* Banner Overlays : Sustainability */
+
+.collection-sustainability .banner-thumbnail-wrapper .color-overlay {
+  background: url(http://static1.squarespace.com/static/57115f0940261dc8badcd6a8/t/57b38e7f59cc6834cfa1ad8f/1471385216321/Sustainability-overlay.png) center center no-repeat;
+  background-size: auto 85%;
+}
+
+/* Banner Overlays : Contact : Growers */
+
+.collection-growers .banner-thumbnail-wrapper .color-overlay {
+  background: url() center center no-repeat;
+  background-size: 20%;
+}
+
+/* Mobile */
+
+
+/* Mobile : Navigation */
+
+.mobile-nav-toggle-label.show-on-scroll-mobile {
+  left: auto;
+  right: 20px
+}
+#mobileNavigation a, #mobileNavigation .folder label {
+  letter-spacing: normal !important;
+}
+#mobileNavigation .subnav a {
+  text-align: center;
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16pt !important;
+  line-height: 120%;
+}
+
+/* Mobile : Back to Top */
+
+.footer-inner .back-to-top-nav .back-to-top a {
+  font-family: "Whitney SSm A", "Whitney SSm B";
+  font-style: normal;
+  font-weight: 400;
+  color: white !important;
+  margin-bottom: 5pt;
+  background: #545453;
+  line-height: 10pt !important;
+  padding-top: 8pt;
+  letter-spacing: normal;
+}
+
+/* Mobile : Responsive Tables */
+@media only screen and (max-width: 750px) {
+  /*
+  .vt-organics #table_specs .wrapper, .table_specs .wrapper {
+    overflow-x: scroll;
+  }
+  .vt-organics #table_specs .wrapper table, .table_specs .wrapper table {
+    width: 760px;
+  }
+  .vt-organics #table_specs .wrapper::-webkit-scrollbar, .table_specs .wrapper::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  .vt-organics #table_specs .wrapper::-webkit-scrollbar:vertical, .table_specs .wrapper::-webkit-scrollbar:vertical {
+    width: 9px;
+  }
+  .vt-organics #table_specs .wrapper::-webkit-scrollbar:horizontal, .table_specs .wrapper::-webkit-scrollbar:horizontal {
+    height: 9px;
+  }
+  .vt-organics #table_specs .wrapper::-webkit-scrollbar-track, .table_specs .wrapper::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, .05);
+    border-radius: 8px;
+  }
+  .vt-organics #table_specs .wrapper::-webkit-scrollbar-thumb, .table_specs .wrapper::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, .6);
+  }
+  */
+}
+
+/* Mobile : iPad Portrait */
+
+@media only screen and (max-width: 768px) {
+  #header {
+    padding-left: 0;
+  }
+  #header .header-inner #logoWrapper h1 {
+    text-align: left;
+  }
+  .mobile-nav-toggle-label {
+    margin-top: 14pt;
+  }
+  .footer-inner .back-to-top-nav .back-to-top a {
+    margin-bottom: 30pt;
+  }
+  footer .col.sqs-col-2.span-2 {
+    width: 30%;
+  }
+  footer .col.sqs-col-3.span-3 {
+    width: 5%
+  }
+  #welcome-overlay-section h1 {
+    top: 16vw;
+  }
+  #welcome-overlay-section h2 {
+    top: 28vw;
+  }
+  .vt-organics #page h2 {
+    font-size: 14pt !important;
+    padding: 8pt;
+    width: 40pt;
+    margin-bottom: 14pt;
+  }
+  .vt-organics #page h3 {
+    font-size: 8pt !important;
+    margin-left: 20pt;
+    max-width: 229px;
+  }
+  .collection-sustainability .banner-thumbnail-wrapper .color-overlay {
+    background: url(http://static1.squarespace.com/static/57115f0940261dc8badcd6a8/t/57b38e7f59cc6834cfa1ad8f/1471385216321/Sustainability-overlay.png) center center no-repeat;
+    background-size: auto 80%;
+  }
+}
+
+/* Mobile : iPhone 6plus Landscape */
+
+@media only screen and (max-width: 740px) {
+  .vt-organics #page h3 {
+    font-size: 8.5pt !important;
+    margin-left: 15pt;
+    margin-top: 10pt;
+    line-height: 11pt;
+    max-width: 220px;
+  }
+}
+
+/* Mobile : iPhone 6 Landscape */
+
+@media only screen and (max-width: 670px) {
+  .vt-organics #page h3 {
+    max-width: 185px;
+  }
+}
+
+/* Mobile : iPhone Landscape */
+
+@media only screen and (max-width:640px) {
+  .vt-organics #page h3 {
+    margin-top: 10pt;
+    max-width: inherit;
+  }
+}
+
+/* Mobile : iPhone 6/s Portrait */
+
+@media only screen and (max-width:480px) {
+  #welcome-intro-page.content:not(.gallery-content) {
+    padding: 20px 34px;
+  }
+  .collection-sustainability #page {
+    padding: 20px 34px;
+  }
+  #welcome-overlay-section h1 {
+    top: 10.7vw;
+  }
+  #welcome-overlay-section h2 {
+    top: 22.8vw;
+  }
+  #welcome-worldwide-page {
+    padding-left: 18pt;
+    padding-right: 18pt;
+  }
+  #welcome-worldwide-page .sqs-row .sqs-row .sqs-block-image {
+    width: 70% !important;
+    margin: 0 auto !important;
+  }
+  #welcome-worldwide-page .sqs-row .sqs-row:first-child .sqs-block-image {
+    width: 50% !important;
+  }
+  #welcome-product-page {
+    padding-left: 36pt;
+    padding-right: 36pt;
+  }
+  .vt-organics #page h2 {
+    font-size: 14pt !important;
+    padding: 8pt;
+    width: 40pt;
+    line-height: 120%;
+    margin-bottom: 40pt;
+  }
+  .vt-organics #page h3 {
+    font-size: 8pt !important;
+    margin-left: 12pt;
+  }
+  .vt-organics h4 {
+    margin-bottom: 0;
+  }
+  .vt-organics #table_upc h4 {
+    margin-top: -25pt !important;
+  }
+  .vt-organics table th {
+    padding-top: 12pt;
+  }
+  .collection-sustainability .banner-thumbnail-wrapper .color-overlay {
+    background: url(http://static1.squarespace.com/static/57115f0940261dc8badcd6a8/t/57b38e7f59cc6834cfa1ad8f/1471385216321/Sustainability-overlay.png) center center no-repeat;
+    background-size: auto 80%;
+  }
+}
+
+/* Mobile : iPhone 6s Plus Portrait */
+
+@media only screen and (max-width:420px) {
+  .vt-organics #page h3 {
+    max-width: 244px;
+  }
+}
+
+/* Mobile : iPhone 4/5s Portrait */
+
+@media only screen and (max-width:320px) {
+  #welcome-overlay-section h1 {
+    top: 8vw;
+  }
+  #welcome-overlay-section h2 {
+    top: 20vw;
+  }
+  .vt-organics #page h2 {
+    width: auto;
+    margin: auto;
+  }
+  .vt-organics #page h3 {
+    font-size: 9pt !important;
+    clear: both;
+    float: none;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 20pt;
+    padding-top: 9pt;
+  }
+  .vt-organics #table_upc .wrapper {
+    overflow-x: scroll;
+  }
+  .vt-organics #table_upc .wrapper table {
+    width: 400px;
+  }
+  .collection-sustainability .banner-thumbnail-wrapper .color-overlay {
+    background: url(http://static1.squarespace.com/static/57115f0940261dc8badcd6a8/t/57b38e7f59cc6834cfa1ad8f/1471385216321/Sustainability-overlay.png) center center no-repeat;
+    background-size: auto 80%;
+  }
+}
+
+/* Mobile : iPhone 5s Landscape */
+
+@media only screen and (min-width:480px) and (max-width:640px) {
+  .vt-organics .sqs-row:first-child .sqs-block-image {
+    width: 70% !important;
+    margin: 0 auto !important;
+  }
+  .vt-organics #page .sqs-row:first-child .sqs-block-image {
+    width: auto;
+  }
+}
+
+/* Mobile: Not Really Mobile (larger pages) */
+
+@media only screen and (min-width:1280px) {
+  #welcome-overlay-section h1 {
+    top: 13vw;
+  }
+  #welcome-overlay-section h2 {
+    top: 24vw;
+  }
+}
+@media only screen and (min-width:1400px) {
+  #welcome-overlay-section h1 {
+    top: 13.5vw;
+  }
+  #welcome-overlay-section h2 {
+    top: 25vw;
+  }
+}
+
+/* Mobile : Footer */
+
+@media only screen and (max-width:640px) {
+  #footer .back-to-top a {
+    /* space between back-to-top button and page list */
+    margin-bottom: 20px;
+  }
+  #footer .sqs-block.html-block {
+    margin-top: -17px;
+  }
+  #footerBlocks .sqs-block-content {
+    text-align: left;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5% 0;
+  }
+  #footerBlocks .sqs-block-content h3 {
+    letter-spacing: 1px;
+    padding: 2% 5%;
+    margin-bottom: 0;
+  }
+  #footerBlocks .sqs-block-content ul {
+    margin: 0;
+  }
+  #footerBlocks .sqs-block-content li {
+    background: white;
+    padding: 2% 5%;
+    margin-bottom: 1px;
+  }
+  #footer .html-block ul li a:not(.sqs-svg-icon--wrapper), #footer .html-block ul li a {
+    border: none;
+  }
+  #footer ul {
+    font-weight: 100;
+  }
+}
+
+
+/* Do some centering on the staff photo rows. */
+@media only screen and (min-width: 641px) {
+  .collection-our-staff div[data-type="page"] .sqs-col-12 .sqs-row {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+
+  .collection-our-staff div[data-type="page"] .sqs-col-12 .sqs-row .sqs-col-3 {
+      flex-basis: 24.9%;
+  }
+
+  .collection-our-staff div[data-type="page"] .sqs-col-12 .col:not([id]) {
+    display: none;
+  }
+}
+
+/* Fixes for retailers page */
+@media only screen and (max-width: 640px) {
+  #links_apples .sqs-block,
+  #links_pears .sqs-block,
+  #links_stone-fruit .sqs-block,
+  #links_kiwifruit .sqs-block,
+  #links_onions .sqs-block {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* Disable the alternating section backgrounds for the Growing Regions page only. */
+.collection-growing-regions .alt-section, .collection-new-sustainability .alt-section {
+  background: inherit !important;
+}
+
+/* Get the page sections to flow together on the Growing Regions page. */
+.collection-growing-regions .index-section:nth-child(n + 3):not(#growers-and-acres-section) .page-content {
+  padding-top: 0;
+}
+
+/* On the Growing Regions page, adjust color on the growers and acres section. */
+.collection-growing-regions #growers-and-acres-section .index-image-overlay,
+.collection-growing-regions #growers-and-acres-section .index-section-image {
+  display: none;
+}
+.collection-growing-regions #growers-and-acres-section {
+  background: rgb(173,180,171);
+}

@@ -2,6 +2,7 @@
 
 var produceData = {};
 var t = [];
+var months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
 
 var parseSheet = {
   Varieties: function(rows) {
@@ -10,12 +11,12 @@ var parseSheet = {
       if (!produceData[row[0]]) produceData[row[0]] = {};
       if (!produceData[row[0]].cultivars) produceData[row[0]].cultivars = {};
       produceData[row[0]].cultivars[row[1]] = {
-        "name": row[1],
-        "season": row[2],
-        "description": row[3],
-        "plu": row[4],
-        "usDatabar": row[5],
-        "packs": []
+        'name': row[1],
+        'season': row[2],
+        'description': row[3],
+        'plu': row[4],
+        'usDatabar': row[5],
+        'packs': []
       };
     }
   },
@@ -27,10 +28,10 @@ var parseSheet = {
       if (!produceData[row[0]].cultivars[row[1]]) produceData[row[0]].cultivars[row[1]] = {};
       if (!produceData[row[0]].cultivars[row[1]].packs) produceData[row[0]].cultivars[row[1]].packs = [];
       produceData[row[0]].cultivars[row[1]].packs.push({
-        "weight": row[2],
-        "grade": row[3],
-        "size": row[4],
-        "upc": row[5]
+        'weight': row[2],
+        'grade': row[3],
+        'size': row[4],
+        'upc': row[5]
       });
     }
   },
@@ -40,12 +41,12 @@ var parseSheet = {
       if (!produceData[row[0]]) produceData[row[0]] = {};
       if (!produceData[row[0]].specs) produceData[row[0]].specs = [];
       produceData[row[0]].specs.push({
-        "pack": row[1],
-        "stickers": row[2],
-        "net": row[3],
-        "gross": row[4],
-        "size": row[5],
-        "quantity": row[6]
+        'pack': row[1],
+        'stickers': row[2],
+        'net': row[3],
+        'gross': row[4],
+        'size': row[5],
+        'quantity': row[6]
       });
     }
   },
@@ -56,21 +57,38 @@ var parseSheet = {
       if (!produceData[row[0]].fields) produceData[row[0]].fields = {};
       if (!produceData[row[0]].fields[row[1]]) produceData[row[0]].fields[row[1]] = [];
       produceData[row[0]].fields[row[1]].push({
-        "column": row[2],
-        "key": row[3]
+        'column': row[2],
+        'key': row[3]
       });
+    }
+  },
+  Availability: function(rows) {
+    for (var r = 0; r < rows.length; r++) {
+      var row = rows[r];
+      var category = row[0];
+      var variety = row[1];
+      if (!produceData[category]) produceData[category] = {};
+      if (!produceData[category].cultivars) produceData[category].cultivars = {};
+      if (!produceData[category].cultivars[variety]) produceData[category].cultivars[category] = {};
+      if (!produceData[category].cultivars[variety].availability) produceData[category].cultivars[variety].availability = [];
+      var rowData = {};
+      for (var m = 0; m < months.length; m++) {
+        rowData[months[m]] = row[m + 2] || ''
+      }
+      console.log(rowData, row);
+      produceData[category].cultivars[variety].availability.push(rowData);
     }
   }
 };
 
 var queryStringValue = function(name, url) {
   if (!url) url = window.location.href;
-  name = name.replace(/[\[\]]/g, "\\$&");
-  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
       results = regex.exec(url);
   if (!results) return null;
   if (!results[2]) return '';
-  return decodeURIComponent(results[2].replace(/\+/g, " "));
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
 };
 
 var isFunction = function(obj) {
@@ -85,7 +103,7 @@ var mergeData = function() {
   var produce,
       produceId = location.pathname.split('/')[2];
   if (!produceData[produceId]) {
-    console.log("Invalid produce category identifier (" + produceId + ").");
+    console.log('Invalid produce category identifier (' + produceId + ').');
     return;
   } else {
     produce = produceData[produceId];
@@ -98,7 +116,7 @@ var mergeData = function() {
     varietyId = Object.keys(produce.cultivars)[0];
   }
   if (!produce.cultivars[varietyId]) {
-    console.log("Invalid produce variety (" + produceId + ":" + varietyId + ").");
+    console.log('Invalid produce variety (' + produceId + ':' + varietyId + ').');
     return;
   } else {
     variety = produce.cultivars[varietyId];
@@ -167,6 +185,20 @@ var mergeData = function() {
       }
       return html;
     }
+  }, {
+    selector: '#table_availability tbody',
+    data: function() {
+      var html = '';
+      console.log(variety.availability);
+      for (var a = 0; a < variety.availability.length; a++) {
+        html += '<tr>';
+        months.forEach(function(month) {
+          html += '<td>' + variety.availability[a][month] + '</td>'
+        });
+        html +=  '</tr>'
+      }
+      return html;
+    }
   }];
 
   // Perform the data merge.
@@ -175,10 +207,13 @@ var mergeData = function() {
     if (isFunction(data)) {
       data = map[i].data();
     }
-    if (typeof(map[i].attribute) !== 'undefined') {
-      Y.one(map[i].selector).setAttribute(map[i].attribute, data);
-    } else {
-      Y.one(map[i].selector).setHTML(data);
+    var target = Y.one(map[i].selector);
+    if (target) {
+      if (typeof(map[i].attribute) !== 'undefined') {
+        target.setAttribute(map[i].attribute, data);
+      } else {
+        target.setHTML(data);
+      }
     }
   }
 
@@ -221,7 +256,7 @@ var mergeData = function() {
 
   // Show the main page content (after data merge).
   var main = document.getElementById('page');
-  main.style.visibility = "visible";
+  main.style.visibility = 'visible';
 
   t.push(performance.now());
   console.log(`Merge took ${t[4] - t[3]} milliseconds.`);
@@ -235,6 +270,7 @@ var parseProduceData = function(googleData) {
   parseSheet.Packs(googleData.valueRanges[1].values);
   parseSheet.Specs(googleData.valueRanges[2].values);
   parseSheet.Fields(googleData.valueRanges[3].values);
+  parseSheet.Availability(googleData.valueRanges[4].values);
   t.push(performance.now());
   console.log(`Parse took ${t[2] - t[1]} milliseconds.`);
   if (document.readyState === 'complete') {
@@ -246,65 +282,59 @@ var parseProduceData = function(googleData) {
 
 t.push(performance.now());
 
-</script>
-<!--
-<script src="https://sheets.googleapis.com/v4/spreadsheets/1QWZxkGFpMtCDYi2J4fKZlJxJJL-VJwmR6ug2qwZF4MU/values:batchGet?ranges=Varieties&ranges=Packs&ranges=Specs&ranges=Fields&key=AIzaSyAthY6sWzvwh-QdvDNkb45dYCWuLrn_fRQ&callback=parseProduceData"></script>
--->
 
-<script>
+var scripts = {
+//   'data': '/s/data-20210217.js',
+//'produce': '/s/produce-20210217.js',
+//'produce': '/s/produce-20210220.js',
+  'data': 'https://sheets.googleapis.com/v4/spreadsheets/1QWZxkGFpMtCDYi2J4fKZlJxJJL-VJwmR6ug2qwZF4MU/values:batchGet?ranges=Varieties&ranges=Packs&ranges=Specs&ranges=Fields&ranges=Availability&key=AIzaSyAthY6sWzvwh-QdvDNkb45dYCWuLrn_fRQ&callback=parseProduceData',
+  'contact': '/s/contact-6lha.js'
+}
 
-  var scripts = {
-//     "data": "/s/data-20210217.js",
-//  "produce": "/s/produce-20210217.js",
-//  "produce": "/s/produce-20210220.js",
-    "data": "https://sheets.googleapis.com/v4/spreadsheets/1QWZxkGFpMtCDYi2J4fKZlJxJJL-VJwmR6ug2qwZF4MU/values:batchGet?ranges=Varieties&ranges=Packs&ranges=Specs&ranges=Fields&key=AIzaSyAthY6sWzvwh-QdvDNkb45dYCWuLrn_fRQ&callback=parseProduceData",
-    "contact": "/s/contact-6lha.js"
+var pages = {
+  'Retailers': {
+    'class': 'vt-contact',
+    'scripts': ['data', 'contact']
+  },
+  'Apples': {
+    'class': 'vt-organics vt-apples',
+    'scripts': ['data', 'produce']
+  },
+  'Pears': {
+    'class': 'vt-organics vt-pears',
+    'scripts': ['data', 'produce']
+  },
+  'Stone Fruit': {
+    'class': 'vt-organics vt-stone-fruit',
+    'scripts': ['data', 'produce']
+  },
+  'Kiwifruit': {
+    'class': 'vt-organics vt-kiwifruit',
+    'scripts': ['data', 'produce']
+  },
+  'Onions': {
+    'class': 'vt-organics vt-onions',
+    'scripts': ['data', 'produce']
   }
+}
 
-  var pages = {
-    "Retailers": {
-      "class": "vt-contact",
-      "scripts": ["data", "contact"]
-    },
-    "Apples": {
-      "class": "vt-organics vt-apples",
-      "scripts": ["data", "produce"]
-    },
-    "Pears": {
-      "class": "vt-organics vt-pears",
-      "scripts": ["data", "produce"]
-    },
-    "Stone Fruit": {
-      "class": "vt-organics vt-stone-fruit",
-      "scripts": ["data", "produce"]
-    },
-    "Kiwifruit": {
-      "class": "vt-organics vt-kiwifruit",
-      "scripts": ["data", "produce"]
-    },
-    "Onions": {
-      "class": "vt-organics vt-onions",
-      "scripts": ["data", "produce"]
+function prepare(name) {
+  if (pages.hasOwnProperty(name)) {
+    var page = pages[name];
+    if (page.hasOwnProperty('class')) {
+      document.getElementsByTagName('html')[0].className += ' ' + page.class;
+    }
+    if (page.hasOwnProperty('scripts')) {
+      page.scripts.forEach(function(name) {
+        if (scripts.hasOwnProperty(name)) {
+          var script = document.createElement('script');
+          script.src = scripts[name];
+          script.async = false;
+          document.head.appendChild(script);
+        }
+      });
     }
   }
-
-  function prepare(name) {
-    if (pages.hasOwnProperty(name)) {
-      var page = pages[name];
-      if (page.hasOwnProperty("class")) {
-        document.getElementsByTagName('html')[0].className += " " + page.class;
-      }
-      if (page.hasOwnProperty("scripts")) {
-        page.scripts.forEach(function(name) {
-          if (scripts.hasOwnProperty(name)) {
-            var script = document.createElement('script');
-            script.src = scripts[name];
-            script.async = false;
-            document.head.appendChild(script);
-          }
-        });
-      }
-    }
-  }
+}
 
 </script>

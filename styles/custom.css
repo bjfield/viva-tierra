@@ -699,11 +699,6 @@ border-color: #aae863
   padding: 4pt 8pt;
   margin-bottom: 3pt;
 }
-.vt-organics #table_upc h4 {
-  color: #5d5f5d;
-  background: white;
-  margin-top: 12pt;
-}
 .vt-organics table, .table_specs table {
   font-size: 8pt;
   color: #545453;
@@ -718,9 +713,6 @@ border-color: #aae863
 .vt-organics table tbody tr, .table_specs table tbody tr {
   border-top: 2px solid #f2f2f1;
 }
-.vt-organics #table_upc table tbody tr {
-  border-top: 2px solid white;
-}
 .vt-organics table tr th, .table_specs table tr th {
   font-family: "Gotham SSm A", "Gotham SSm B";
   font-style: normal;
@@ -732,13 +724,27 @@ border-color: #aae863
   color: #5d5f5d;
   background: white;
 }
-.vt-organics #table_upc table tr td, .vt-organics #table_upc table tr th {
-  color: #5d5f5d;
-  background: #f2f2f1;
-}
 .vt-organics #table_specs {
   padding-top: 42pt;
   margin-bottom: 20pt;
+}
+.vt-organics #table_upc h4,
+.vt-organics #table_availability h4 {
+  color: #5d5f5d;
+  background: white;
+  margin-top: 12pt;
+}
+.vt-organics #table_upc table tbody tr,
+.vt-organics #table_availability table tbody tr {
+  border-top: 2px solid white;
+}
+.vt-organics #table_upc table tr td, .vt-organics #table_upc table tr th,
+.vt-organics #table_availability table tr td, .vt-organics #table_availability table tr th {
+  color: #5d5f5d;
+  background: #f2f2f1;
+}
+.vt-organics #table_availability tr, .vt-organics #table_availability td {
+  text-align: center;
 }
 
 /* Spec table footer */
@@ -1197,5 +1203,24 @@ border-color: #aae863
   display: none;
 }
 .collection-growing-regions #growers-and-acres-section {
-  background: rgb(173,180,171);
+  background: rgb(152,156,150);
+}
+
+/* Display the advance/back arrows on the sustainability gallery. */
+#sustainability-gallery-gallery   .arrow.previous-slide {
+	display: block;
+  	left: 22px;
+}
+#sustainability-gallery-gallery   .arrow.next-slide {
+	display: block;
+  	right: 22px;
+}
+
+/* Change the quote line on block quotes to be thicker and the height of the words only. */
+#sustainability-focus-1-page blockquote {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-left: 6px solid rgb(230,230,230);
 }

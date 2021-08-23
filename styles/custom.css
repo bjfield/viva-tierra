@@ -1,3 +1,71 @@
+#first-slide-section,
+#first-slide-section .index-section-wrapper,
+#first-slide-page {
+  background: rgb(151,156,150);
+}
+#first-slide-page figure {
+  margin: 0 12% 12% 12% !important;
+}
+#second-slide-section,
+#second-slide-section .index-section-wrapper,
+#second-slide-page {
+  background: #aae55d;
+}
+/*
+#third-slide-section,
+#third-slide-section .index-section-wrapper,
+#third-slide-page {
+  background: rgb(151,156,150);
+}
+*/
+#fourth-slide-section,
+#fourth-slide-section .index-section-wrapper,
+#fourth-slide-page {
+  background: rgb(151,156,150);
+}
+#fourth-slide-page h2 {
+  color: white !important;
+}
+#fourth-slide-page .sqs-block-button a {
+  background-color: #faff5c !important;
+  border-color: #faff5c !important;
+}
+#fifth-slide-section,
+#fifth-slide-section .index-section-wrapper,
+#fifth-slide-page {
+  background: #aae55d;
+}
+#fifth-slide-page a[href="#sustainability-focus-section"] {
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 0;
+  transform: rotate(45deg);
+  width: 2em;
+  height: 2em;
+  overflow: hidden;
+  text-indent: -100px;
+  margin: 1em
+}
+
+@media only screen and (max-width: 768px) {
+  #fourth-slide-page .content-inner {
+    padding: 0 20px;
+  }
+  .collection-type-index.design-slideshow.slideshow-aspect-ratio-2401-cinema .index-gallery {
+      padding-bottom: 125%;
+  }
+  #second-slide-page .html-block {
+    padding: 0 13vw !important;
+  }
+  #third-slide-page h2 {
+    margin-top: 4em;
+  }
+  #fifth-slide-page .html-block {
+    padding: 0 15vw !important;
+  }
+}
+
 /* Body Classes for Each Page */
 
 .collection-welcome {}
@@ -639,9 +707,12 @@ border-color: #aae863
   letter-spacing: normal;
   font-size: 10pt;
   color: #545453;
+  margin-left: 0;
+  /*
   margin-left: 20pt;
   float: left;
   margin-top: 12pt;
+  */
 }
 .vt-organics #page h3 strong {
   font-family: "Gotham SSm A", "Gotham SSm B";
@@ -729,25 +800,45 @@ border-color: #aae863
   margin-bottom: 20pt;
 }
 .vt-organics #table_upc h4,
-.vt-organics #table_availability h4 {
+.vt-organics #table_availability h4,
+.vt-organics #table_codes h4 {
   color: #5d5f5d;
   background: white;
-  margin-top: 12pt;
+  margin-top: 0;
 }
 .vt-organics #table_upc table tbody tr,
-.vt-organics #table_availability table tbody tr {
+.vt-organics #table_availability table tbody tr,
+.vt-organics #table_codes table tbody tr:nth-child(n + 2) {
   border-top: 2px solid white;
 }
 .vt-organics #table_upc table tr td, .vt-organics #table_upc table tr th,
-.vt-organics #table_availability table tr td, .vt-organics #table_availability table tr th {
+.vt-organics #table_availability table tr td, .vt-organics #table_availability table tr th,
+.vt-organics #table_codes table tr td, .vt-organics #table_codes table tr th {
   color: #5d5f5d;
   background: #f2f2f1;
+}
+.vt-organics #table_codes table tr td strong {
+  font-family: "Gotham A", "Gotham B";
+  font-style: normal;
+  font-weight: 800;
 }
 .vt-organics #table_availability tr, .vt-organics #table_availability td {
   text-align: center;
 }
+.vt-organics #table_availability td,
+.vt-organics #table_availability th {
+  vertical-align: top;
+}
 
-/* Spec table footer */
+@media only screen and (max-width: 864px) {
+  .vt-organics #table_availability td,
+  .vt-organics #table_availability th {
+    padding: 5px 3px;
+    width: 5%;
+  }
+}
+
+/* Produce table footers */
 
 .vt-organics table tfoot tr, .table_specs table tfoot tr {
   border-top: 2px solid #f2f2f1;
@@ -951,7 +1042,9 @@ border-color: #aae863
   }
   .vt-organics #page h3 {
     font-size: 8pt !important;
+    /*
     margin-left: 20pt;
+    */
     max-width: 229px;
   }
   .collection-sustainability .banner-thumbnail-wrapper .color-overlay {
@@ -965,7 +1058,9 @@ border-color: #aae863
 @media only screen and (max-width: 740px) {
   .vt-organics #page h3 {
     font-size: 8.5pt !important;
+    /*
     margin-left: 15pt;
+    */
     margin-top: 10pt;
     line-height: 11pt;
     max-width: 220px;
@@ -1028,13 +1123,15 @@ border-color: #aae863
   }
   .vt-organics #page h3 {
     font-size: 8pt !important;
+    /*
     margin-left: 12pt;
+    */
   }
   .vt-organics h4 {
     margin-bottom: 0;
   }
   .vt-organics #table_upc h4 {
-    margin-top: -25pt !important;
+    /*margin-top: -25pt !important;*/
   }
   .vt-organics table th {
     padding-top: 12pt;
@@ -1217,7 +1314,7 @@ border-color: #aae863
 }
 
 /* Change the quote line on block quotes to be thicker and the height of the words only. */
-#sustainability-focus-1-page blockquote {
+#sustainability-focus-page blockquote {
   padding-top: 0;
   padding-bottom: 0;
   margin-top: 25px;

@@ -1,0 +1,28 @@
+<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/764196/6247752/css/fonts.css" />
+<script language="javascript">
+function docReady(fn) {
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        setTimeout(fn, 1);
+    } else {
+        document.addEventListener("DOMContentLoaded", fn);
+    }
+}
+
+function populateSections(){
+  document.querySelectorAll('body:not(.sqs-edit-mode) #sustainability-gallery-gallery div.slide').forEach(function(slide) {
+    var page = document.getElementById(slide.attributes['data-slide-url'].value + '-page');
+    var image = slide.querySelector('img');
+    if (page !== null && image !== null) {
+      page.style.position = 'absolute';
+      page.style.width = '100%';
+      page.style.zIndex = 1;
+      page.style.transform = 'translate(-50%, -50%)';
+      page.style.left = '50%';
+      page.style.top = '50%';
+      image.before(page);
+    }
+  });
+}
+
+docReady(populateSections);
+</script>

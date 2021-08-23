@@ -46,7 +46,7 @@ Y.on('domready', function() {
         var columnCount = 4;
         var cultivarNames = Object.keys(produce.cultivars);
         if (cultivarNames.length > 4) {
-            var fruitsPerColumn = Math.floor(cultivarNames.length / columnCount);
+            var fruitsPerColumn = Math.ceil(cultivarNames.length / columnCount);
             for (var c = 0; c < columnCount; c++) {
                 var selector = '#links_' + fruit + ' div:nth-child(' + (c + 1) + ') div div p';
                 var links = [];

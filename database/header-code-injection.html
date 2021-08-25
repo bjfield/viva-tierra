@@ -316,14 +316,13 @@ var scripts = {
 //'produce': '/s/produce-20210217.js',
 //'produce': '/s/produce-20210220.js',
   'data': 'https://sheets.googleapis.com/v4/spreadsheets/1QWZxkGFpMtCDYi2J4fKZlJxJJL-VJwmR6ug2qwZF4MU/values:batchGet?ranges=Varieties&ranges=Packs&ranges=Specs&ranges=Fields&ranges=Availability&key=AIzaSyAthY6sWzvwh-QdvDNkb45dYCWuLrn_fRQ&callback=parseProduceData',
-  'contact': '/s/contact-6lha.js'
+  'contact': '/s/contact-bjc2.js'
 }
 
 var pages = {
   'Retailers': {
     'class': 'vt-contact',
-    'scripts': ['data']
-//  'scripts': ['data', 'contact']
+    'scripts': ['data', 'produce', 'contact']
   },
   'Apples': {
     'class': 'vt-organics vt-apples',
@@ -343,6 +342,11 @@ var pages = {
   },
   'Onions': {
     'class': 'vt-organics vt-onions',
+    'scripts': ['data', 'produce']
+
+    },
+  'Ginger': {
+    'class': 'vt-organics vt-ginger',
     'scripts': ['data', 'produce']
   }
 }

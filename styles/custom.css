@@ -1,71 +1,3 @@
-#first-slide-section,
-#first-slide-section .index-section-wrapper,
-#first-slide-page {
-  background: rgb(151,156,150);
-}
-#first-slide-page figure {
-  margin: 0 12% 12% 12% !important;
-}
-#second-slide-section,
-#second-slide-section .index-section-wrapper,
-#second-slide-page {
-  background: #aae55d;
-}
-/*
-#third-slide-section,
-#third-slide-section .index-section-wrapper,
-#third-slide-page {
-  background: rgb(151,156,150);
-}
-*/
-#fourth-slide-section,
-#fourth-slide-section .index-section-wrapper,
-#fourth-slide-page {
-  background: rgb(151,156,150);
-}
-#fourth-slide-page h2 {
-  color: white !important;
-}
-#fourth-slide-page .sqs-block-button a {
-  background-color: #faff5c !important;
-  border-color: #faff5c !important;
-}
-#fifth-slide-section,
-#fifth-slide-section .index-section-wrapper,
-#fifth-slide-page {
-  background: #aae55d;
-}
-#fifth-slide-page a[href="#sustainability-focus-section"] {
-  border: solid white;
-  border-width: 0 4px 4px 0;
-  display: inline-block;
-  padding: 0;
-  transform: rotate(45deg);
-  width: 2em;
-  height: 2em;
-  overflow: hidden;
-  text-indent: -100px;
-  margin: 1em
-}
-
-@media only screen and (max-width: 768px) {
-  #fourth-slide-page .content-inner {
-    padding: 0 20px;
-  }
-  .collection-type-index.design-slideshow.slideshow-aspect-ratio-2401-cinema .index-gallery {
-      padding-bottom: 125%;
-  }
-  #second-slide-page .html-block {
-    padding: 0 13vw !important;
-  }
-  #third-slide-page h2 {
-    margin-top: 4em;
-  }
-  #fifth-slide-page .html-block {
-    padding: 0 15vw !important;
-  }
-}
-
 /* Body Classes for Each Page */
 
 .collection-welcome {}
@@ -74,6 +6,9 @@
 .collection-organicsstone-fruit {}
 .collection-organicskiwifruit {}
 .collection-organicsonions {}
+.collection-organicsginger {}
+.collection-organicsfigs {}
+.collection-organicssquash {}
 .collection-sustainability {}
 .collection-retailers {}
 .collection-growers {}
@@ -83,6 +18,9 @@
 .collection-organicspears main,
 .collection-organicsstone-fruit main,
 .collection-organicskiwifruit main,
+.collection-organicsginger main,
+.collection-organicsfigs main,
+.collection-organicssquash main,
 .collection-organicsonions main {
   visibility: hidden;
 
@@ -585,7 +523,11 @@ border-color: #aae863
   */
   text-decoration: none;
 }
-/* document.querySelectorAll('#welcome-product-new-section .image-slide-title').forEach(function(node){ node.parentElement.querySelector('a').appendChild(node); }) */
+#welcome-product-new-page .sqs-gallery .slide .image-slide-title a {
+  color: white !important;
+  border-bottom: 1px solid rgba(255, 255, 255, .75);
+  text-decoration: none;
+}
 #welcome-product-section .sqs-gallery .slide .image-slide-title,
 #welcome-product-new-section .sqs-gallery .slide .image-slide-title {
   color: white !important;
@@ -757,6 +699,10 @@ border-color: #aae863
   font-size: 15pt;
   letter-spacing: normal;
 }
+.vt-organics .sqs-gallery-design-grid-slide:first-child:last-child {
+  /* Hide grid if there's only one variety. */
+  display: none;
+}
 
 /* Organics: Tables */
 
@@ -817,17 +763,30 @@ border-color: #aae863
   color: #5d5f5d;
   background: #f2f2f1;
 }
+.vt-organics #table_codes table tr td {
+  display: flex;
+  line-height: 140%;
+  padding: 4px 5px;
+}
 .vt-organics #table_codes table tr td strong {
   font-family: "Gotham A", "Gotham B";
   font-style: normal;
   font-weight: 800;
+  white-space: nowrap;
+  padding-right: 1em;
 }
-.vt-organics #table_availability tr, .vt-organics #table_availability td {
+.vt-organics #table_availability th, .vt-organics #table_availability td {
   text-align: center;
 }
 .vt-organics #table_availability td,
 .vt-organics #table_availability th {
   vertical-align: top;
+}
+.vt-organics #table_upc,
+.vt-organics #table_availability,
+.vt-organics #table_codes {
+  /* Reduce the margin between these tables. */
+  margin-top: -15px;
 }
 
 @media only screen and (max-width: 864px) {
@@ -861,8 +820,9 @@ border-color: #aae863
 }
 
 /* Sustainability : Heading */
+/* Case Study : Heading */
 
-.collection-sustainability #greener-cold-storage {
+#greener-cold-storage {
   font-size: 17pt;
   font-family: "Knockout 30 A", "Knockout 30 B";
   font-style: normal;
@@ -877,15 +837,15 @@ border-color: #aae863
   height: 130pt;
   vertical-align: middle;
 }
-.collection-sustainability #greener-cold-storage br {
+#greener-cold-storage br {
   display: none;
 }
 @media only screen and (max-width: 480px) {
-  .collection-sustainability #greener-cold-storage {
+  #greener-cold-storage {
     background: none;
     padding-left: 0;
   }
-  .collection-sustainability #greener-cold-storage h3 {
+  #greener-cold-storage h3 {
     font-size: 17pt;
     font-family: "Knockout 30 A", "Knockout 30 B";
     font-style: normal;
@@ -901,7 +861,7 @@ border-color: #aae863
     vertical-align: middle;
     width: 100pt;
   }
-  .collection-sustainability #greener-cold-storage br {
+  #greener-cold-storage br {
     display: block;
   }
 }
@@ -978,7 +938,17 @@ border-color: #aae863
 }
 
 /* Mobile : Responsive Tables */
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 768) {
+  /* Works, if desired. */
+  /*
+  table.responsive {
+    display: block;
+    overflow-x: auto;
+    max-width: fit-content;
+    white-space: nowrap;
+  }
+  */
+  /* Doesn't work anymore. */
   /*
   .vt-organics #table_specs .wrapper, .table_specs .wrapper {
     overflow-x: scroll;
@@ -1278,10 +1248,19 @@ border-color: #aae863
   #links_pears .sqs-block,
   #links_stone-fruit .sqs-block,
   #links_kiwifruit .sqs-block,
+  #links_ginger .sqs-block,
+  #links_figs .sqs-block,
   #links_onions .sqs-block {
     padding-bottom: 0 !important;
     padding-top: 0 !important;
   }
+}
+
+/* Change the link style on the H2. */
+.collection-retailers h2 a,
+.collection-growers h2 a {
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
+  text-decoration: none !important;
 }
 
 /* Disable the alternating section backgrounds for the Growing Regions page only. */
@@ -1320,4 +1299,75 @@ border-color: #aae863
   margin-top: 25px;
   margin-bottom: 25px;
   border-left: 6px solid rgb(230,230,230);
+}
+
+/* Change the link style on the H2 in the bottom banner. */
+#sustainability-banner-section h2 a {
+  border-bottom: 1px solid rgba(255, 255, 255, .7);
+  text-decoration: none;
+}
+
+
+
+/* Home page slideshow gallery. */
+
+#first-slide-section,
+#first-slide-section .index-section-wrapper,
+#first-slide-page {
+  background: rgb(151,156,150);
+}
+#first-slide-page figure {
+  margin: 0 12% 12% 12% !important;
+}
+#second-slide-section,
+#second-slide-section .index-section-wrapper,
+#second-slide-page {
+  background: #aae55d;
+}
+#fourth-slide-section,
+#fourth-slide-section .index-section-wrapper,
+#fourth-slide-page {
+  background: rgb(151,156,150);
+}
+#fourth-slide-page h2 {
+  color: white !important;
+}
+#fourth-slide-page .sqs-block-button a {
+  background-color: #faff5c !important;
+  border-color: #faff5c !important;
+}
+#fifth-slide-section,
+#fifth-slide-section .index-section-wrapper,
+#fifth-slide-page {
+  background: #aae55d;
+}
+#fifth-slide-page a[href="#sustainability-focus-section"] {
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 0;
+  transform: rotate(45deg);
+  width: 2em;
+  height: 2em;
+  overflow: hidden;
+  text-indent: -100px;
+  margin: 1em
+}
+
+@media only screen and (max-width: 768px) {
+  #fourth-slide-page .content-inner {
+    padding: 0 20px;
+  }
+  .collection-type-index.design-slideshow.slideshow-aspect-ratio-2401-cinema .index-gallery {
+      padding-bottom: 125%;
+  }
+  #second-slide-page .html-block {
+    padding: 0 13vw !important;
+  }
+  #third-slide-page h2 {
+    margin-top: 4em;
+  }
+  #fifth-slide-page .html-block {
+    padding: 0 15vw !important;
+  }
 }

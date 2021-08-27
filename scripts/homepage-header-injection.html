@@ -1,0 +1,17 @@
+<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/764196/6247752/css/fonts.css" />
+<script language="javascript">
+  Y.on('load', function () {
+    var nextArrow = document.querySelector(".arrow.next-slide");
+    setInterval(function() {
+      nextArrow.click();
+    }, 4000);
+  });
+
+  Y.on('load', function() {
+    document.querySelectorAll('#welcome-product-new-section .slide a').forEach(function(link) {
+      var slideDiv = link.closest('.slide');
+      var titleDiv = slideDiv.querySelector('.image-slide-title');
+      titleDiv.innerHTML = '<a href="' + link.href + '">' + titleDiv.innerText + '</a>'
+    })
+  });
+</script>

@@ -5,6 +5,19 @@ var t = [];
 var months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
 
 var parseSheet = {
+  Categories: function(rows) {
+    var headerRow = rows[0];
+    for (var r = 1; r < rows.length; r++) {
+      var row = rows[r];
+      var category = row[0];
+      var categoryName = row[1];
+      if (!produceData[category]) produceData[category] = {};
+      if (!produceData[category].properties) produceData[category].properties = {};
+      for (var c = 2; c < row.length; c++) {
+        produceData[category].properties[headerRow[c]] = row[c];
+      }
+    }
+  },
   Varieties: function(rows) {
     for (var r = 1; r < rows.length; r++) {
       var row = rows[r];
@@ -152,10 +165,10 @@ var mergeData = function() {
     data: variety.season
   }, {
     selector: '#table_codes tbody tr:nth-child(1) td',
-    data: '<strong>PLU</strong>&nbsp;&nbsp;' + variety.plu
+    data: '<strong>PLU</strong><span>' + variety.plu + '</span>'
   }, {
     selector: '#table_codes tbody tr:nth-child(2) td',
-    data: '<strong>US Databar</strong>&nbsp;&nbsp;' + variety.usDatabar
+    data: '<strong>US Databar</strong><span>' + variety.usDatabar + '</span>'
   }, {
     selector: '#table_codes h4',
     data: variety.name + ' Codes'
@@ -165,8 +178,10 @@ var mergeData = function() {
       if (!variety.packs) return '';
       if (variety.packs.length > 0) {
         return variety.name + ' Consumer Packs';
+      } else if (typeof produce.properties['Pack Unavailability Message'] !== 'undefined') {
+        return variety.name + ' Packs — ' + produce.properties['Pack Unavailability Message'];
       } else {
-        return variety.name + ' Packs — Tray Pack Only';
+        return variety.name + ' Packs — Unavailable';
       }
     }
   }, {
@@ -246,7 +261,8 @@ var mergeData = function() {
   }
 
   // Update the product image.
-  var thumb = Y.one('a[href*="variety=' + variety.name.replace(/\s+/gi, '+') + '"] > img.thumb-image');
+  //var thumb = Y.one('a[href*="variety=' + variety.name.replace(/\s+/gi, '+') + '"] > img.thumb-image');
+  var thumb = Y.one(`a > img.thumb-image[alt="` + variety.name + `"]`);
   if (thumb) {
     var dataset = thumb._node.dataset;
     variety.image = {
@@ -294,11 +310,12 @@ var mergeData = function() {
 var parseProduceData = function(googleData) {
   t.push(performance.now());
   console.log(`Fetch took ${t[1] - t[0]} milliseconds.`);
-  parseSheet.Varieties(googleData.valueRanges[0].values);
-  parseSheet.Packs(googleData.valueRanges[1].values);
-  parseSheet.Specs(googleData.valueRanges[2].values);
-  parseSheet.Fields(googleData.valueRanges[3].values);
-  parseSheet.Availability(googleData.valueRanges[4].values);
+  parseSheet.Categories(googleData.valueRanges[0].values);
+  parseSheet.Varieties(googleData.valueRanges[1].values);
+  parseSheet.Packs(googleData.valueRanges[2].values);
+  parseSheet.Specs(googleData.valueRanges[3].values);
+  parseSheet.Fields(googleData.valueRanges[4].values);
+  parseSheet.Availability(googleData.valueRanges[5].values);
   t.push(performance.now());
   console.log(`Parse took ${t[2] - t[1]} milliseconds.`);
   if (document.readyState === 'complete') {
@@ -315,8 +332,8 @@ var scripts = {
 //   'data': '/s/data-20210217.js',
 //'produce': '/s/produce-20210217.js',
 //'produce': '/s/produce-20210220.js',
-  'data': 'https://sheets.googleapis.com/v4/spreadsheets/1QWZxkGFpMtCDYi2J4fKZlJxJJL-VJwmR6ug2qwZF4MU/values:batchGet?ranges=Varieties&ranges=Packs&ranges=Specs&ranges=Fields&ranges=Availability&key=AIzaSyAthY6sWzvwh-QdvDNkb45dYCWuLrn_fRQ&callback=parseProduceData',
-  'contact': '/s/contact-bjc2.js'
+  'data': 'https://sheets.googleapis.com/v4/spreadsheets/1QWZxkGFpMtCDYi2J4fKZlJxJJL-VJwmR6ug2qwZF4MU/values:batchGet?ranges=Categories&ranges=Varieties&ranges=Packs&ranges=Specs&ranges=Fields&ranges=Availability&key=AIzaSyAthY6sWzvwh-QdvDNkb45dYCWuLrn_fRQ&callback=parseProduceData',
+  'contact': '/s/contact-n5kf.js'
 }
 
 var pages = {
@@ -343,10 +360,17 @@ var pages = {
   'Onions': {
     'class': 'vt-organics vt-onions',
     'scripts': ['data', 'produce']
-
-    },
+  },
   'Ginger': {
     'class': 'vt-organics vt-ginger',
+    'scripts': ['data', 'produce']
+  },
+  'Figs': {
+    'class': 'vt-organics vt-figs',
+    'scripts': ['data', 'produce']
+  },
+  'Squash': {
+    'class': 'vt-organics vt-squash',
     'scripts': ['data', 'produce']
   }
 }
